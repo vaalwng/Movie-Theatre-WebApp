@@ -35,7 +35,7 @@ create table TheatresMovies (
 create table MovieTimes (
 	theatreID int NOT NULL,
 	movieID int NOT NULL,
-	showtime char(7) NOT NULL,
+	showtime char(12) NOT NULL,
 	primary key (theatreID, movieID, showtime),
 	foreign key (theatreID) references Theatres (theatreID),
 	foreign key (movieID) references Movies (movieID)
@@ -83,27 +83,27 @@ insert into TheatresMovies values (4, 6);
 insert into TheatresMovies values (4, 9);
 
 
-insert into MovieTimes values (1, 1, );
-insert into MovieTimes values (1, 1, );
-insert into MovieTimes values (1, 2, );
-insert into MovieTimes values (1, 2, );
-insert into MovieTimes values (1, 3, );
-insert into MovieTimes values (1, 3, );
-insert into MovieTimes values (1, 4, );
-insert into MovieTimes values (1, 4, );
-insert into MovieTimes values (1, 5, );
-insert into MovieTimes values (1, 5, );
-insert into MovieTimes values (1, 6, );
-insert into MovieTimes values (1, 6, );
-insert into MovieTimes values (1, 7, );
-insert into MovieTimes values (1, 7, );
-insert into MovieTimes values (1, 8, );
-insert into MovieTimes values (1, 8, );
-insert into MovieTimes values (1, 9, );
-insert into MovieTimes values (1, 9, );
-insert into MovieTimes values (1, 10, );
-insert into MovieTimes values (1, 10, );
-insert into MovieTimes values (2, 1, );
+insert into MovieTimes values (1, 1,8:00 AM);
+insert into MovieTimes values (1, 1,10:30 AM);
+insert into MovieTimes values (1, 2,12:30 PM);
+insert into MovieTimes values (1, 2,2:30 PM);
+insert into MovieTimes values (1, 3,4:30 PM);
+insert into MovieTimes values (1, 3,7:00 PM);
+insert into MovieTimes values (1, 4,8:00 AM);
+insert into MovieTimes values (1, 4,10:30 AM);
+insert into MovieTimes values (1, 5,12:30 PM);
+insert into MovieTimes values (1, 5,3:00 PM);
+insert into MovieTimes values (1, 6,5:30 PM);
+insert into MovieTimes values (1, 6,8:00 AM);
+insert into MovieTimes values (1, 7,10:00 AM);
+insert into MovieTimes values (1, 7,12:00 PM);
+insert into MovieTimes values (1, 8,2:00 PM);
+insert into MovieTimes values (1, 8,4:00 PM);
+insert into MovieTimes values (1, 9,6:00 PM);
+insert into MovieTimes values (1, 9,8:00 AM);
+insert into MovieTimes values (1, 10,10:00 AM);
+insert into MovieTimes values (1, 10,11:43 AM); #Come back
+insert into MovieTimes values (2, 1,8:00 AM);
 insert into MovieTimes values (2, 1, );
 insert into MovieTimes values (2, 3, );
 insert into MovieTimes values (2, 3, );
