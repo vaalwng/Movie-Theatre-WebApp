@@ -1,0 +1,127 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Theaters of Zip Code</title>
+        <style>
+            html{
+                height: 100%;
+                background-color: black;
+            }
+            body{
+                min-height: 100%;
+                height: 100%;
+                background-color: white;
+                padding: 20px 20px 20px 20px;
+                max-width: 800px;
+                width: 80%;
+                margin: 20px auto;
+            }            
+            .div1{
+                font-size: 32px;
+                text-align: center;
+                font-family: Verdana, Charcoal, sans-serif;
+            }           
+            a:hover {
+                background-color: #ddd;
+                color: black;
+            }            
+            .next {
+                background-color: #4CAF50;
+                color: white;
+            }           
+            .round {
+                border-radius: 50%;
+            }            
+            .datatable{
+                width: 650px;
+                margin: 0 auto 0 auto;
+                border: 2px solid black;
+            }           
+            .bb{
+                margin-left: 45%;
+            }
+            .th1{
+                font-family: Verdana, Charcoal, sans-serif;
+                font-weight: bold;
+            }
+
+            .th{
+                font-family: Verdana, Charcoal, sans-serif;
+                font-weight: 200;
+            }            
+        </style>
+    </h:head>
+    <h:body>
+        <h:form>
+            <table width="100%" cellpadding="0" cellspacing="0" border="0" align="center"  class="outer_table">
+                <tr>
+                    <td>
+                        <table width="200" height="100" cellpadding="0" cellspacing="0" border="0" align="center">
+                            <tr>
+                                <td align="center">
+                                    <h:graphicImage library="images" name="theater.png" width="100" height="100" ></h:graphicImage><br/>
+                                    <h:graphicImage library="images" name="location.png" width="50" height="50" ></h:graphicImage>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            <div class="div1">
+                <h:outputText class="div1" value="Theaters at #{showTheaterBean.zipcode} " />
+            </div>
+            <h:dataTable class="datatable" value ="#{showTheaterBean.theaterList}" var="theater">
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText class="th1" value="action" />
+                    </f:facet>
+                    <h:commandButton value="select" action="#{showMovieBean.showMovie(theater)}">                       
+                    </h:commandButton>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText class="th1" value="Theater ID" />
+                    </f:facet>
+                    <h:outputText class="th" value="#{theater.theaterid}" />
+                </h:column>                  
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText class="th1" value="Theater Name" />
+                    </f:facet>
+                    <h:outputText class="th" value="#{theater.theatername}" />
+                </h:column>  
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText class="th1" value="Theater Address" />
+                    </f:facet>
+                    <h:outputText class="th" value="#{theater.address}" />
+                </h:column>  
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText class="th1" value="Theater Zipcode" />
+                    </f:facet>
+                    <h:outputText class="th" value="#{theater.zipcode}" />                                    
+                </h:column> 
+            </h:dataTable>
+            <br/>
+            <h:commandButton value="Back to Search" action="MainPage.xhtml" />           
+        </h:form>
+        <br/>
+        <table width="100%" cellpadding="0" cellspacing="0" border="0" align="center"  class="outer_table">
+            <tr>
+                <td>
+                    <table width="500" height="300" cellpadding="0" cellspacing="0" border="0" align="center">
+                        <tr>
+                            <td align="center">        
+                                <h:graphicImage library="images" name="socials.jpg" width="500" height="75" />
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </h:body>
+</html>
